@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Dummy file not using
+
 public class helpText : MonoBehaviour {
 
 	// Use this for initialization

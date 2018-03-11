@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//Script to handle user interaction
 
 public class ButtonSctions : MonoBehaviour {
 
@@ -17,11 +18,13 @@ public class ButtonSctions : MonoBehaviour {
 
     public void Restart()
     {
+        //method for restarting the current scene
         SceneManager.LoadScene("main");
     }
 
     public void Exit()
     {
+        //method for quiting the application
         Application.Quit();
     }
 

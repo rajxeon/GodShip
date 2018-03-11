@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Building block for the enemy infrastructure
 public class cube : MonoBehaviour {
 
     private int health = 1;
@@ -12,7 +13,10 @@ public class cube : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        //get the AR parent
         parentTarget = GameObject.Find("/ARCamera/ImageTarget");
+        //Save a local copy of the initial transformation 
+        //Which will come handy to destroy the object
         iniTransform = gameObject.transform;
 
     }
@@ -20,7 +24,8 @@ public class cube : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (iniTransform != gameObject.transform) {
-            
+            //If the initial transformation ! eq to final
+            //Switch on the gravity
             GetComponent<Rigidbody>().useGravity = true;
         }
         
@@ -29,6 +34,8 @@ public class cube : MonoBehaviour {
      
 
     void reduceHealth() {
+        //Method for reducing the helth of the cube
+        //Called from the bullet script when hit detected
         health-=1;
         //Debug.Log("Health-----------------------" + health);
         GetComponent<Rigidbody>().useGravity = true;
